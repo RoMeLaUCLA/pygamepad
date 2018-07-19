@@ -1,4 +1,4 @@
-import peble.memory as MemoryManager
+import pygamepad.MemoryManager as MemoryManager
 from pyshmxtreme.decorator import WriteSharedMem
 import subprocess
 import os
