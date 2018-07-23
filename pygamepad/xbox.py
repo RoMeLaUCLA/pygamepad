@@ -71,6 +71,13 @@ class Joystick:
             self.close()
             raise IOError('Unable to detect Xbox controller/receiver - Run python as sudo')
 
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        # self.close()
+        pass
+
     """Used by all Joystick methods to read the most recent events from xboxdrv.
     The refreshRate determines the maximum frequency with which events are checked.
     If a valid event response is found, then the controller is flagged as 'connected'.
