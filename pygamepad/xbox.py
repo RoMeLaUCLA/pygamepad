@@ -251,6 +251,13 @@ class Joystick:
         self.refresh()
         return (self.rightX(deadzone),self.rightY(deadzone))
 
+    # Returns tuple containing dpad up, down, left, and right values
+    # Usage:
+    #     dup, ddown, dleft, dright = joy.dpad()
+    def dpad(self):
+        self.refresh()
+        return self.dpadUp(), self.dpadDown(), self.dpadLeft(), self.dpadRight()
+
     # Cleanup by ending the xboxdrv subprocess
     def close(self):
         os.system('pkill xboxdrv')
