@@ -1,9 +1,11 @@
-import pygamepad
+import pygamepad.xbox as pygamepad
+
 
 # Format floating point number to string format -x.xxx
 def fmtFloat(n):
     return '{:6.3f}'.format(n)
-    
+
+
 joy = pygamepad.Joystick()
 
 print "Xbox controller sample: Press Back button to exit"
@@ -56,6 +58,7 @@ while not joy.Back():
         print " ",
         
     # Move cursor back to start of line
-    print chr(13),
+    print('\r'),
+
 # Close out when done
 joy.close()
