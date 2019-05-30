@@ -50,16 +50,16 @@ class Joystick:
         #
         # Read responses from 'xboxdrv' for upto 2 seconds, looking for controller/receiver to respond
         found = False
-        waitTime = time.time() + 2
+        waitTime = time.time() + 0.5
         while waitTime > time.time() and not found:
             readable, writeable, exception = select.select([self.pipe],[],[],0)
             if readable:
-                response = self.pipe.readline()
+                response = str(self.pipe.readline())
                 # Hard fail if we see this, so force an error
                 if response[0:7] == 'No Xbox':
                     raise IOError('No Xbox controller/receiver found')
                 # Success if we see the following
-                if response[0:12] == 'Press Ctrl-c':
+                if "Starting without uinput" in response:
                     found = True
                 # If we see 140 char line, we are seeing valid input
                 if len(response) == 140:

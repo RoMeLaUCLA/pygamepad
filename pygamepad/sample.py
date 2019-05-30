@@ -8,54 +8,54 @@ def fmtFloat(n):
 
 joy = pygamepad.Joystick()
 
-print "Xbox controller sample: Press Back button to exit"
+print("Xbox controller sample: Press Back button to exit")
 # Loop until back button is pressed
 while not joy.Back():
     # Show connection status
     if joy.connected():
-        print "Connected   ",
+        print("Connected   "),
     else:
-        print "Disconnected",
+        print("Disconnected"),
     # Left analog stick
-    print "Lx,Ly ",fmtFloat(joy.leftX()),fmtFloat(joy.leftY()),
+    print("Lx,Ly ",fmtFloat(joy.leftX()),fmtFloat(joy.leftY())),
     # Right trigger
-    print "Rtrg ",fmtFloat(joy.rightTrigger()),
+    print("Rtrg ",fmtFloat(joy.rightTrigger())),
     # A/B/X/Y buttons
-    print "Buttons ",
+    print("Buttons "),
     if joy.A():
-        print "A",
+        print("A"),
     else:
-        print " ",
+        print(" "),
     if joy.B():
-        print "B",
+        print("B"),
     else:
-        print " ",
+        print(" "),
     if joy.X():
-        print "X",
+        print("X"),
     else:
-        print " ",
+        print(" "),
     if joy.Y():
-        print "Y",
+        print("Y"),
     else:
-        print " ",
+        print(" "),
     # Dpad U/D/L/R
-    print "Dpad ",
+    print("Dpad "),
     if joy.dpadUp():
-        print "U",
+        print("U"),
     else:
-        print " ",
+        print(" "),
     if joy.dpadDown():
-        print "D",
+        print("D"),
     else:
-        print " ",
+        print(" "),
     if joy.dpadLeft():
-        print "L",
+        print("L"),
     else:
-        print " ",
+        print(" "),
     if joy.dpadRight():
-        print "R",
+        print("R"),
     else:
-        print " ",
+        print(" "),
         
     # Move cursor back to start of line
     print('\r'),
